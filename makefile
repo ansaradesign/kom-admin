@@ -21,5 +21,4 @@ clean:
 
 pre:
 	make clean
-	make extract
 	make build
