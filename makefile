@@ -18,3 +18,8 @@ extract:
 
 clean:
 	bun run extract-clean
+
+pre:
+	make clean
+	make extract
+	make build

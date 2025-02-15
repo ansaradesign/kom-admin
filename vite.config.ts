@@ -5,7 +5,6 @@ import tailwindcss from '@tailwindcss/vite';
 import { TanStackRouterVite } from '@tanstack/router-plugin/vite';
 import { lingui } from '@lingui/vite-plugin';
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [
     MillionLint.vite({
