@@ -1,7 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router';
 
 import { Flex } from '@/global/ui/primitives/flex';
-import { Typo } from '@/global/ui/primitives/typo/typo';
+import { Typo } from '@/global/ui/primitives/typo';
 
 export const Route = createFileRoute('/(guard)/_guard/')({
   component: RouteComponent,
@@ -10,7 +10,7 @@ export const Route = createFileRoute('/(guard)/_guard/')({
 function RouteComponent() {
   return (
     <Flex className=''>
-      <Typo>Hello</Typo>
+      <Typo as='h5'>Hello</Typo>
     </Flex>
   );
 }

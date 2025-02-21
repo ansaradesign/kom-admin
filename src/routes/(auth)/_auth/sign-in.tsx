@@ -1,6 +1,8 @@
 import { createFileRoute, useNavigate } from '@tanstack/react-router';
 import { Trans } from '@lingui/react/macro';
 
+import { Flex } from '@/global/ui/primitives/flex';
+
 export const Route = createFileRoute('/(auth)/_auth/sign-in')({
   component: RouteComponent,
 });
@@ -9,7 +11,7 @@ function RouteComponent() {
   const navigate = useNavigate();
 
   return (
-    <div>
+    <Flex>
       <button
         onClick={() => {
           localStorage.setItem('token', '123');
@@ -18,6 +20,6 @@ function RouteComponent() {
       >
         <Trans>Войти</Trans>
       </button>
-    </div>
+    </Flex>
   );
 }

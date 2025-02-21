@@ -16,7 +16,3 @@ msgstr ""
 #: src/routes/(auth)/_auth/sign-in.tsx:19
 msgid "Войти"
 msgstr ""
-
-#: src/global/widgets/header/ui/index.tsx:9
-msgid "Хедер"
-msgstr "Header"
