@@ -1,9 +1,16 @@
 import { createFileRoute } from '@tanstack/react-router';
 
+import { Flex } from '@/global/ui/primitives/flex';
+import { Typo } from '@/global/ui/primitives/typo/typo';
+
 export const Route = createFileRoute('/(guard)/_guard/')({
   component: RouteComponent,
 });
 
 function RouteComponent() {
-  return <div className=''></div>;
+  return (
+    <Flex className=''>
+      <Typo>Hello</Typo>
+    </Flex>
+  );
 }

@@ -39,6 +39,7 @@ export default tseslint.config(
       import: importPlugin,
     },
     rules: {
+      '@typescript-eslint/no-unused-vars': 'warn',
       'react-compiler/react-compiler': 'error',
       ...reactHooks.configs.recommended.rules,
       ...react.configs.recommended.rules,

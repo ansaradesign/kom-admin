@@ -2,14 +2,17 @@ import { useEffect, useState } from 'react';
 
 import { Theme, ThemeProviderContext } from './use-theme';
 
+import { LocalStorageService } from '@/global/lib/services/storage';
+import { LocalStorageKeys } from '@/global/config/constants';
+
 interface ThemeProviderProps {
   children: React.ReactNode;
   defaultTheme?: Theme;
-  storageKey?: string;
+  storageKey?: `${LocalStorageKeys.THEME}`;
 }
 
-export function ThemeProvider({ children, defaultTheme = 'system', storageKey = 'vite-ui-theme', ...props }: ThemeProviderProps) {
-  const [theme, setTheme] = useState<Theme>(() => (localStorage.getItem(storageKey) as Theme) || defaultTheme);
+export function ThemeProvider({ children, defaultTheme = 'system', storageKey = 'theme', ...props }: ThemeProviderProps) {
+  const [theme, setTheme] = useState<Theme>(() => LocalStorageService.getItem(storageKey)! || defaultTheme);
 
   useEffect(() => {
     const root = window.document.documentElement;
@@ -30,7 +33,7 @@ export function ThemeProvider({ children, defaultTheme = 'system', storageKey = 
   const value = {
     theme,
     setTheme: (theme: Theme) => {
-      localStorage.setItem(storageKey, theme);
+      LocalStorageService.setItem(storageKey, theme);
       setTheme(theme);
     },
   };
