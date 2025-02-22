@@ -1,0 +1,1 @@
+export { dynamicActivate } from './init';

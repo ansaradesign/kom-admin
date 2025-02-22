@@ -6,7 +6,7 @@ const config: LinguiConfig = {
 
   catalogs: [
     {
-      path: '<rootDir>/src/global/i18n/locales/{locale}/messages',
+      path: '<rootDir>/src/shared/i18n/locales/{locale}/messages',
       include: ['<rootDir>/src'],
       exclude: ['**/node_modules/**'],
     },

@@ -1,6 +1,5 @@
+import { Header } from '@kom-domains/global/widgets/header';
 import { createFileRoute, Navigate, Outlet } from '@tanstack/react-router';
-
-import { Header } from '@/global/widgets/header';
 
 export const Route = createFileRoute('/(guard)/_guard')({
   component: RouteComponent,

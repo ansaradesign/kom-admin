@@ -21,7 +21,9 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      '@': '/src',
+      '@kom': '/src',
+      '@kom-shared': '/src/shared',
+      '@kom-domains': '/src/domains',
     },
   },
 });

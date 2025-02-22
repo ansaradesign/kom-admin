@@ -1,0 +1,10 @@
+@import 'tailwindcss';
+@import './scrollbar.css';
+@plugin '../config/themes.ts';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-black: #000;
+  --color-white: #fff;
+}

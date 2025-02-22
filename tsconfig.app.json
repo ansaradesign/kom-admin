@@ -16,7 +16,9 @@
     "jsx": "react-jsx",
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"]
+      "@kom-shared/*": ["src/shared/*"],
+      "@kom-domains/*": ["src/domains/*"],
+      "@kom/*": ["src/*"]
     },
 
     /* Linting */

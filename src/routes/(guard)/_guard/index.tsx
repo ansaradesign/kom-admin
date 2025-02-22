@@ -1,7 +1,5 @@
+import { Flex, Typo } from '@kom-shared/ui';
 import { createFileRoute } from '@tanstack/react-router';
-
-import { Flex } from '@/global/ui/primitives/flex';
-import { Typo } from '@/global/ui/primitives/typo';
 
 export const Route = createFileRoute('/(guard)/_guard/')({
   component: RouteComponent,
