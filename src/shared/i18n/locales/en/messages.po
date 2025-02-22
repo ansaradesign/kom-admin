@@ -13,6 +13,6 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/routes/(auth)/_auth/sign-in.tsx:21
+#: src/routes/(auth)/_auth/sign-in.tsx:20
 msgid "Войти"
 msgstr ""

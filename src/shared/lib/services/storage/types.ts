@@ -1,5 +1,5 @@
-import { LocalStorageKeys } from '@shared/config';
-import { Theme } from '@shared/lib/providers/theme/use-theme';
+import { LocalStorageKeys } from '@kom-shared/config';
+import { Theme } from '@kom-shared/lib/providers/theme/use-theme';
 
 export type StorageDataType = string | number | boolean | object;
 export type StorageKeys = `${LocalStorageKeys}`;
