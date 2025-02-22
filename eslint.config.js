@@ -13,7 +13,7 @@ import pluginLingui from 'eslint-plugin-lingui';
 import pluginQuery from '@tanstack/eslint-plugin-query';
 
 export default tseslint.config(
-  { ignores: ['dist'] },
+  { ignores: ['dist', 'dev-dist'] },
   ...pluginRouter.configs['flat/recommended'],
   pluginLingui.configs['flat/recommended'],
   ...pluginQuery.configs['flat/recommended'],

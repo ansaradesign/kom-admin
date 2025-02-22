@@ -1,10 +1,17 @@
 @import 'tailwindcss';
 @import './scrollbar.css';
 @plugin '../config/themes.ts';
+@plugin 'tailwindcss-motion';
 
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
   --color-black: #000;
   --color-white: #fff;
+}
+
+@layer utilities {
+  :root {
+    --motion-duration: 200ms;
+  }
 }

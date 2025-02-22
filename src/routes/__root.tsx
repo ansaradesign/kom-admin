@@ -1,3 +1,4 @@
+import { OfflineIndicator, ReloadPrompt } from '@kom-shared/lib/pwa';
 import { createRootRoute, Outlet } from '@tanstack/react-router';
 import { lazy, Suspense } from 'react';
 
@@ -17,7 +18,8 @@ export const Route = createRootRoute({
   component: () => (
     <>
       <Outlet />
-
+      <OfflineIndicator />
+      <ReloadPrompt />
       <Suspense>
         <TanStackRouterDevtools position='bottom-right' />
       </Suspense>
