@@ -1,4 +1,4 @@
-import { Flex, Typo } from '@kom-shared/ui';
+import { Flex } from '@kom-shared/ui';
 import { createFileRoute } from '@tanstack/react-router';
 
 export const Route = createFileRoute('/(guard)/_guard/')({
@@ -6,10 +6,5 @@ export const Route = createFileRoute('/(guard)/_guard/')({
 });
 
 function RouteComponent() {
-  return (
-    <Flex className=''>
-      <Typo as='h5'>Hello</Typo>
-      qjedsdss
-    </Flex>
-  );
+  return <Flex className=''></Flex>;
 }

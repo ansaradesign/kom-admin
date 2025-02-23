@@ -1,3 +1,4 @@
+import { AnimatePresence } from '@kom-shared/ui';
 import { useEffect, useState } from 'react';
 import { useRegisterSW } from 'virtual:pwa-register/react';
 
@@ -48,11 +49,14 @@ export function OfflineIndicator() {
     };
   }, []);
 
-  if (isOnline) return null;
-
   return (
-    <div className='bg-default/40 motion-opacity-in-0 motion-translate-y-in-100 motion-duration-400 motion-blur-in-md fixed bottom-4 left-1/2 z-50 -translate-x-1/2 rounded-full px-5 py-3 text-sm font-medium shadow-lg'>
-      Вы находитесь в офлайн режиме
-    </div>
+    <AnimatePresence
+      show={!isOnline}
+      className='motion-duration-400 fixed bottom-4 left-1/2 z-50 -translate-x-1/2'
+      inClass='motion-opacity-in-0 motion-blur-in-md'
+      outClass='motion-opacity-out-0 motion-blur-out-md'
+    >
+      <div className='bg-default/40 rounded-full px-5 py-3 text-sm backdrop-blur-md'>Вы находитесь в офлайн режиме</div>
+    </AnimatePresence>
   );
 }

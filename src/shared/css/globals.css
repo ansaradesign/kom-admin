@@ -11,7 +11,7 @@
 }
 
 @layer utilities {
-  :root {
-    --motion-duration: 200ms;
+  * {
+    --motion-duration: var(--transition-duration);
   }
 }

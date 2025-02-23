@@ -12,6 +12,9 @@ interface ThemeProviderProps {
 
 export function ThemeProvider({ children, defaultTheme = 'system', storageKey = 'theme', ...props }: ThemeProviderProps) {
   const [theme, setTheme] = useState<Theme>(() => LocalStorageService.getItem(storageKey)! || defaultTheme);
+  const [resolvedTheme, setResolvedTheme] = useState<'light' | 'dark'>(() =>
+    theme === 'system' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme,
+  );
 
   useEffect(() => {
     const root = window.document.documentElement;
@@ -22,15 +25,18 @@ export function ThemeProvider({ children, defaultTheme = 'system', storageKey = 
       const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 
       root.classList.add(systemTheme);
+      setResolvedTheme(systemTheme);
 
       return;
     }
 
     root.classList.add(theme);
+    setResolvedTheme(theme);
   }, [theme]);
 
   const value = {
     theme,
+    resolvedTheme,
     setTheme: (theme: Theme) => {
       LocalStorageService.setItem(storageKey, theme);
       setTheme(theme);

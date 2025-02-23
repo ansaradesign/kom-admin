@@ -4,11 +4,13 @@ export type Theme = 'dark' | 'light' | 'system';
 
 interface ThemeProviderState {
   theme: Theme;
+  resolvedTheme: 'light' | 'dark';
   setTheme: (theme: Theme) => void;
 }
 
 const initialState: ThemeProviderState = {
   theme: 'system',
+  resolvedTheme: 'light',
   setTheme: () => null,
 };
 
