@@ -1,7 +1,7 @@
 import * as Dialog from '@radix-ui/react-dialog';
 import { PiXBold } from 'react-icons/pi';
 import { VisuallyHidden } from '@radix-ui/react-visually-hidden';
-import { ScrollArea, ScrollAreaProps } from '@kom-shared/ui';
+import { ScrollArea, ScrollAreaProps } from '@kom-shared/ui/primitives';
 
 import { modalTV, ModalVariants } from './classnames';
 

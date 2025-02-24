@@ -1,6 +1,6 @@
 import { createFileRoute, useNavigate } from '@tanstack/react-router';
 import { Trans } from '@lingui/react/macro';
-import { Flex } from '@kom-shared/ui';
+import { Flex } from '@kom-shared/ui/primitives';
 
 export const Route = createFileRoute('/(auth)/_auth/sign-in')({
   component: RouteComponent,

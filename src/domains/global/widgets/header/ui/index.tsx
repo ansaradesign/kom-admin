@@ -1,4 +1,4 @@
-import { Flex } from '@kom-shared/ui';
+import { Flex } from '@kom-shared/ui/primitives';
 
 export function Header() {
   return (

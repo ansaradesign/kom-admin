@@ -1,5 +1,6 @@
 import { useTheme } from '@kom-shared/lib';
-import { Flex, Modal, ModalFooter, ModalHeader } from '@kom-shared/ui';
+import { Modal, ModalFooter, ModalHeader } from '@kom-shared/ui/overlays';
+import { Flex } from '@kom-shared/ui/primitives';
 import { createFileRoute } from '@tanstack/react-router';
 import { useState } from 'react';
 

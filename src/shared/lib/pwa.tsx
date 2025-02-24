@@ -1,4 +1,4 @@
-import { AnimatePresence } from '@kom-shared/ui';
+import { AnimatePresence } from '@kom-shared/ui/utilities';
 import { useEffect, useState } from 'react';
 import { useRegisterSW } from 'virtual:pwa-register/react';
 
