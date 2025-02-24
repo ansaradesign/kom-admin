@@ -12,6 +12,9 @@
     "extract-clean": "lingui extract --clean"
   },
   "dependencies": {
+    "@blur-ui/scroll-area": "^1.0.1",
+    "@blur-ui/skeleton": "^1.0.1",
+    "@blur-ui/spinner": "^1.0.3",
     "@blur-ui/tailwind-themes": "^1.0.6",
     "@lingui/react": "^5.2.0",
     "@lingui/vite-plugin": "^5.2.0",

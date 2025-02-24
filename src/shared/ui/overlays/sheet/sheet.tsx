@@ -11,21 +11,35 @@ interface SheetProps extends Dialog.DialogProps, SheetVariants {
   contentProps?: Dialog.DialogContentProps;
   closeProps?: Dialog.DialogCloseProps;
   hideClose?: boolean;
+  classNames?: {
+    overlay?: string;
+    content?: string;
+    close?: string;
+    closeIcon?: string;
+  };
 }
 
 export function Sheet(props: SheetProps) {
-  const { overlayProps, contentProps, closeProps, children, hideClose, align, size, ...rest } = props;
+  const { overlayProps, contentProps, closeProps, children, hideClose, align, size, classNames, ...rest } = props;
 
-  const { content, overlay, close } = sheetTV({ align, size });
+  const { content, overlay, close, closeIcon } = sheetTV({ align, size });
 
   return (
     <Dialog.Root {...rest}>
       <Dialog.Portal>
-        <Dialog.Overlay {...overlayProps} className={overlay()} />
-        <Dialog.Content {...contentProps} className={content()}>
+        <Dialog.Overlay {...overlayProps} className={overlay({ className: classNames?.overlay })} />
+        <Dialog.Content
+          onPointerDownOutside={(e) => {
+            if (e.target instanceof Element && e.target.closest('[data-sonner-toast]')) {
+              e.preventDefault();
+            }
+          }}
+          {...contentProps}
+          className={content({ className: classNames?.content })}
+        >
           {!hideClose && (
-            <Dialog.Close {...closeProps} className={close()}>
-              <PiXBold className='size-5 opacity-60' />
+            <Dialog.Close {...closeProps} className={close({ className: classNames?.close })}>
+              <PiXBold className={closeIcon({ className: classNames?.closeIcon })} />
             </Dialog.Close>
           )}
           {children}
