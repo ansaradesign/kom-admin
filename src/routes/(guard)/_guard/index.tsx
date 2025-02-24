@@ -1,5 +1,5 @@
 import { useTheme } from '@kom-shared/lib';
-import { Modal, ModalFooter, ModalHeader } from '@kom-shared/ui/overlays';
+import { Sheet, SheetContent, SheetHeader } from '@kom-shared/ui/overlays';
 import { Flex } from '@kom-shared/ui/primitives';
 import { createFileRoute } from '@tanstack/react-router';
 import { useState } from 'react';
@@ -18,10 +18,13 @@ function RouteComponent() {
       <button onClick={() => setOpen(true)}>Открыть боковое меню</button>
       <button onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>{theme}</button>
 
-      <Modal open={open} onOpenChange={setOpen}>
-        <ModalHeader>Тест</ModalHeader>
-        <ModalFooter></ModalFooter>
-      </Modal>
+      <Sheet align='right' open={open} onOpenChange={setOpen}>
+        <SheetHeader>ds</SheetHeader>
+        <SheetContent>
+          <div className='bg-default h-200 w-full'></div>
+          <div className='bg-default h-200 w-full'></div>
+        </SheetContent>
+      </Sheet>
     </Flex>
   );
 }

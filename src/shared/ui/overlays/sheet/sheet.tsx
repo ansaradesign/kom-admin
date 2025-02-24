@@ -1,6 +1,8 @@
 import * as Dialog from '@radix-ui/react-dialog';
 import { PiXBold } from 'react-icons/pi';
 import { VisuallyHidden } from '@radix-ui/react-visually-hidden';
+import { ScrollAreaProps } from '@blur-ui/scroll-area';
+import { ScrollArea } from '@kom-shared/ui/primitives';
 
 import { sheetTV, SheetVariants } from './classnames';
 
@@ -68,14 +70,38 @@ export function SheetHeader(props: SheetHeaderProps) {
   );
 }
 
-export function SheetContent(props: React.HTMLAttributes<HTMLDivElement>) {
-  const { ...rest } = props;
+export function SheetContent(props: ScrollAreaProps) {
+  const { children, ...rest } = props;
 
-  return <div className='flex h-full flex-col gap-6 px-6' {...rest}></div>;
+  return (
+    <ScrollArea
+      className='shrink-1 mb-6 flex h-full flex-col gap-6 overflow-y-auto px-6'
+      classNames={{
+        verticalScrollbar: 'w-2',
+        horizontalScrollbar: 'h-2',
+      }}
+      {...rest}
+    >
+      <div className='flex flex-col gap-4'>{children}</div>
+    </ScrollArea>
+  );
 }
 
-export function SheetFooter(props: React.HTMLAttributes<HTMLDivElement>) {
-  const { ...rest } = props;
+interface SheetFooterProps extends React.HTMLAttributes<HTMLDivElement> {
+  showCancel?: boolean;
+}
 
-  return <div className='flex gap-4 p-6' {...rest}></div>;
+export function SheetFooter(props: SheetFooterProps) {
+  const { showCancel = false, children, ...rest } = props;
+
+  return (
+    <div className='flex shrink-0 gap-6 px-6 pb-6' {...rest}>
+      {showCancel && (
+        <Dialog.Close asChild>
+          <button className='bg-default w-full cursor-pointer rounded-xl px-4 py-2.5 font-medium shadow'>Отмена</button>
+        </Dialog.Close>
+      )}
+      {children}
+    </div>
+  );
 }
